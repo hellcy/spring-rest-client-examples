@@ -1,113 +1,137 @@
 
 package guru.springframework.api.domain;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class User implements Serializable
-{
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "id",
+    "name",
+    "username",
+    "email",
+    "address",
+    "phone",
+    "website",
+    "company"
+})
+@Generated("jsonschema2pojo")
+public class User {
 
-  private String gender;
-  private Name name;
-  private Location location;
-  private String email;
-  private Login login;
-  private String phone;
-  private Job job;
-  private Billing billing;
-  private String language;
-  private String currency;
-  private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @JsonProperty("id")
+    private Integer id;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("username")
+    private String username;
+    @JsonProperty("email")
+    private String email;
+    @JsonProperty("address")
+    private Address address;
+    @JsonProperty("phone")
+    private String phone;
+    @JsonProperty("website")
+    private String website;
+    @JsonProperty("company")
+    private Company company;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-  private final static long serialVersionUID = 270727596527329664L;
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
 
-  public String getGender() {
-    return gender;
-  }
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setGender(String gender) {
-    this.gender = gender;
-  }
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
 
-  public Name getName() {
-    return name;
-  }
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setName(Name name) {
-    this.name = name;
-  }
+    @JsonProperty("username")
+    public String getUsername() {
+        return username;
+    }
 
-  public Location getLocation() {
-    return location;
-  }
+    @JsonProperty("username")
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-  public void setLocation(Location location) {
-    this.location = location;
-  }
+    @JsonProperty("email")
+    public String getEmail() {
+        return email;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    @JsonProperty("email")
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    @JsonProperty("address")
+    public Address getAddress() {
+        return address;
+    }
 
-  public Login getLogin() {
-    return login;
-  }
+    @JsonProperty("address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
-  public void setLogin(Login login) {
-    this.login = login;
-  }
+    @JsonProperty("phone")
+    public String getPhone() {
+        return phone;
+    }
 
-  public String getPhone() {
-    return phone;
-  }
+    @JsonProperty("phone")
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
+    @JsonProperty("website")
+    public String getWebsite() {
+        return website;
+    }
 
-  public Job getJob() {
-    return job;
-  }
+    @JsonProperty("website")
+    public void setWebsite(String website) {
+        this.website = website;
+    }
 
-  public void setJob(Job job) {
-    this.job = job;
-  }
+    @JsonProperty("company")
+    public Company getCompany() {
+        return company;
+    }
 
-  public Billing getBilling() {
-    return billing;
-  }
+    @JsonProperty("company")
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
-  public void setBilling(Billing billing) {
-    this.billing = billing;
-  }
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
-  public String getLanguage() {
-    return language;
-  }
-
-  public void setLanguage(String language) {
-    this.language = language;
-  }
-
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
-  }
-
-  public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-  }
-
-  public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
-  }
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
 }

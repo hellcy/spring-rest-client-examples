@@ -1,7 +1,6 @@
 package guru.springframework.springrestclientexamples.services;
 
 import guru.springframework.api.domain.User;
-import guru.springframework.api.domain.UserData;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,7 +17,7 @@ public class ApiServiceImpl implements ApiService{
 
   @Override
   public List<User> getUsers(Integer limit) {
-    UserData userData = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users?_limit=" + limit, UserData.class);
-    return userData.getData();
+    List<User> users = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users?_limit=" + limit, List.class);
+    return users;
   }
 }
